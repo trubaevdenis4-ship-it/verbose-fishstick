@@ -179,6 +179,53 @@ input[type=search]{-webkit-appearance:none;appearance:none}
 .meter.thin{height:4px;margin-top:10px}
 #auth .sheet{max-width:400px;border-radius:28px;text-align:left}
 #auth .sc{margin-bottom:22px}
+/* ===== v5: док-панель, Ще, соцмережі ===== */
+nav#nav{left:0;right:0;bottom:0;top:auto;width:auto;display:block;gap:0;padding:4px 0 calc(8px + env(safe-area-inset-bottom));border-radius:0;border:0;border-top:1px solid var(--bd);background:color-mix(in srgb,var(--bg2) 90%,transparent);backdrop-filter:blur(26px) saturate(1.5);-webkit-backdrop-filter:blur(26px) saturate(1.5);box-shadow:0 -14px 34px -18px rgba(0,0,0,.6);transform:translateZ(0)}
+#navs{position:relative;display:flex;align-items:flex-end;overflow-x:auto;overflow-y:hidden;padding-top:8px;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+#navs::-webkit-scrollbar{display:none}
+#navs button{flex:0 0 20%;min-width:0;scroll-snap-align:center;position:relative;background:none;border:0;color:var(--mu);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.68rem;font-weight:550;padding:0 2px;cursor:pointer;border-radius:0;box-shadow:none;transition:color .2s}
+#navs button:hover{background:none}
+#navs button span{display:grid;place-items:center;width:48px;height:30px;border-radius:15px;transition:background .25s,box-shadow .25s}
+#navs button.on{color:var(--ac);font-weight:700;background:none;box-shadow:none}
+#navs button.on span{background:color-mix(in srgb,var(--ac) 18%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ac) 35%,transparent),0 0 18px -4px var(--ac)}
+#navs button.on:before{content:"";position:absolute;top:-6px;left:50%;width:22px;height:3px;margin-left:-11px;border-radius:3px;background:var(--ac);box-shadow:0 0 12px var(--ac)}
+#navs button.hm span{width:50px;height:50px;border-radius:50%;background:linear-gradient(145deg,color-mix(in srgb,var(--ac) 26%,var(--bg2)),color-mix(in srgb,var(--ac2) 26%,var(--bg2)));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ac) 40%,var(--bd)),0 8px 20px -8px color-mix(in srgb,var(--ac) 70%,#000);color:var(--tx)}
+#navs button.hm.on span{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);box-shadow:0 10px 26px -6px color-mix(in srgb,var(--ac) 85%,#000)}
+#navs button.hm.on:before{display:none}
+#navs button.hm svg{width:26px;height:26px}
+#nline{display:block;height:3px;margin:8px 26% 0;border-radius:3px;overflow:hidden;background:color-mix(in srgb,var(--tx) 9%,transparent);opacity:.4;transition:opacity .3s}
+#nline b{display:block;height:100%;border-radius:3px;background:var(--ac);box-shadow:0 0 8px var(--ac)}
+nav#nav.sc #nline{opacity:1}
+.fab{bottom:calc(98px + env(safe-area-inset-bottom))}
+main{padding-bottom:calc(150px + env(safe-area-inset-bottom))}
+@media(min-width:800px){
+ nav#nav{top:0;bottom:0;right:auto;width:220px;padding:84px 14px;border-top:0;border-right:1px solid var(--bd);box-shadow:none}
+ #navs{flex-direction:column;align-items:stretch;overflow:visible;gap:6px;padding-top:0}
+ #navs button{flex:none;flex-direction:row;gap:14px;font-size:.95rem;padding:10px 14px;border-radius:18px;justify-content:flex-start}
+ #navs button span,#navs button.hm span{width:30px;height:30px;border-radius:50%;background:none;box-shadow:none;color:inherit}
+ #navs button.hm{order:-1}
+ #navs button.hm.on span,#navs button.on span{background:none;box-shadow:none;color:inherit}
+ #navs button.on{background:color-mix(in srgb,var(--ac) 14%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ac) 30%,transparent)}
+ #navs button.on:before{display:none}
+ #navs button.hm svg{width:22px;height:22px}
+ #nline{display:none}
+ .fab{bottom:32px}
+ main{padding-bottom:60px}
+}
+.hub{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}
+@media(min-width:700px){.hub{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;text-align:left;border:1px solid color-mix(in srgb,var(--c) 30%,var(--bd));border-radius:var(--r2);padding:16px;min-height:136px;display:flex;flex-direction:column;gap:3px;cursor:pointer;color:var(--tx);overflow:hidden;background:radial-gradient(170px 130px at 100% 0,color-mix(in srgb,var(--c) 26%,transparent),transparent),var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .15s,box-shadow .2s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px var(--c)}
+.tile:active{transform:scale(.97)}
+.tile .ti{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;margin-bottom:auto;flex:none;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 42%,transparent)}
+.tile svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile strong{font-size:1.02rem;margin-top:14px}
+.tile.wide{grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;gap:16px}
+.tile.wide .ti{margin:0}.tile.wide strong{margin:0}
+.sechead{display:flex;align-items:center;gap:12px;margin-bottom:6px}.sechead h1{margin:0}
+.back{border-radius:50%;width:44px;height:44px;padding:0;flex:none;font-size:1.5rem;line-height:1;display:grid;place-items:center}
+.meter.over i{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+.hero .big{font-size:clamp(2.2rem,9vw,3.4rem)}
 </style></head><body>
 <canvas id="bg3d" width="1536" height="730"></canvas>
 <div id="app" hidden>
@@ -269,12 +316,12 @@ const tot=(a,day)=>a.filter(x=>ymd(new Date(x.ts))===day).reduce((s,x)=>s+x.min,
 const social=day=>Object.values(S.sc[day]||{}).reduce((a,b)=>a+(+b||0),0);
 
 /* ---------- стан і збереження ---------- */
-const def=()=>({events:[],tasks:[],hw:[],habits:[],exp:[],rec:[],rd:{},focus:[],time:[],notes:[],diary:{},sc:{},nf:[],fired:{},run:null,tm:null,fm:'25/5',fc:30,set:{theme:'midnight',accent:'#22d3ee',name:'Денис',budget:0,social:120,morning:'07:30',evening:'21:30',cur:'грн',ws:1,fx:true,bg:!matchMedia("(pointer:coarse)").matches,fs:16,qon:true,qint:20,sound:true,n:{ev30:true,ev5:true,hw:true,dl:true,soc:true,bud:true,rep:true}}});
+const def=()=>({events:[],tasks:[],hw:[],habits:[],exp:[],rec:[],rd:{},focus:[],time:[],notes:[],diary:{},sc:{},sct:null,nf:[],fired:{},run:null,tm:null,fm:'25/5',fc:30,set:{theme:'midnight',accent:'#22d3ee',name:'',budget:0,social:120,morning:'07:30',evening:'21:30',cur:'грн',ws:1,fx:true,bg:!matchMedia("(pointer:coarse)").matches,fs:16,qon:true,qint:20,sound:true,n:{ev30:true,ev5:true,hw:true,dl:true,soc:true,bud:true,rep:true}}});
 let S=def(),KEY=null;
 let svPend=0,svBusy=0,svP=Promise.resolve();
 async function svFlush(){while(svPend){svPend=0;try{localStorage.setItem('myday_enc',JSON.stringify(await seal(KEY,S)))}catch(e){toast('Не вдалося зберегти: сховище браузера заповнене')}}svBusy=0}
-function save(){if(!KEY)return Promise.resolve();svPend=1;if(!svBusy){svBusy=1;svP=svFlush()}return svP}
-let pg='home',mt='fin',tf='today',cd=ymd(new Date()),cv='day';
+function save(){if(!KEY)return Promise.resolve();pushSync();svPend=1;if(!svBusy){svBusy=1;svP=svFlush()}return svP}
+let pg='home',mt='',tf='today',cd=ymd(new Date()),cv='day';
 
 /* ---------- тема ---------- */
 function applyTheme(){const t=S.set.theme,d=document.documentElement;const eff=t==='auto'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'midnight'):t;d.dataset.theme=eff;d.style.setProperty('--ac',S.set.accent);d.style.setProperty('--fs',(S.set.fs||16)+'px');d.classList.toggle('nofx',!S.set.fx);$('meta[name=theme-color]').content={light:'#f2f4fa',oled:'#000'}[eff]||'#0a0e1a'}
@@ -347,21 +394,21 @@ function alerts(n){const td=ymd(n),nm=n.getHours()*60+n.getMinutes(),a=[],ds=day
  S.tasks.filter(t=>!t.done&&t.pc>=2).forEach(t=>a.push([`Ти вже ${t.pc+1}-й раз переносиш «${t.t}».`]));
  if(ds.soc>S.set.social)a.push([`Ти перевищив ліміт соцмереж на ${fmtDur(ds.soc-S.set.social)}.`]);
  const f=finStats(n);if(f.B&&f.today>f.lim&&f.today>0)a.push([`Сьогодні витрати ${fmt(f.today)} — більше за ліміт ${fmt(f.lim)}/день.`]);
- const hw=S.hw.filter(h=>h.st<2&&h.due&&h.due<=td).length;if(hw)a.push([`Домашніх завдань на сьогодні або прострочених: ${hw}`]);if(n.getHours()>=20&&!hasE(S.diary[td]))a.push(['Ти ще не писав у щоденник сьогодні.','Написати','dtoday']);return a}
+ const hw=S.hw.filter(h=>h.st<2&&h.due&&h.due<=td).length;if(hw)a.push([`Домашніх завдань на сьогодні або прострочених: ${hw}`]);if('Notification' in window&&Notification.permission==='default'&&!(S.set.push&&S.set.push.on))a.push(['Увімкни сповіщення, щоб нагадування приходили на телефон.','Налаштувати','pgo']);if(n.getHours()>=20&&!hasE(S.diary[td]))a.push(['Ти ще не писав у щоденник сьогодні.','Написати','dtoday']);return a}
 
 /* ---------- сповіщення ---------- */
 const NC={calendar:'#3b82f6',tasks:'#f59e0b',finance:'#a855f7',social:'#ef4444',report:'#22d3ee'};
 function push(cat,txt,key,act){if(key){if(S.fired[key])return;S.fired[key]=1}S.nf.unshift({id:uid(),cat,txt,ts:Date.now(),read:0,act});S.nf=S.nf.slice(0,100);save();toast(txt);
- if('Notification' in window&&Notification.permission==='granted'){try{new Notification('MYDAY',{body:txt})}catch{}}bc()}
+ sysNotify(txt,key||cat);bc()}
 function bc(){const n=S.nf.filter(x=>!x.read).length;const b=$('#bc');if(b)b.textContent=n?n:''}
 function checks(n){const td=ymd(n),nm=n.getHours()*60+n.getMinutes(),N=S.set.n;
  occ(td).forEach(e=>{const d=mins(e.s)-nm;
   [30,5].forEach(o=>{if(N['ev'+o]&&d>0&&d<=o)push('calendar',o===30?`Через ${d} хв — ${e.t}`:`Через ${d} хв починається ${e.t}.${e.loc?' Локація: '+e.loc+'.':''}`,`${td}|${e.id}|${o}`)});
   const a=nm-mins(e.e);if(N.hw&&a>=5&&a<90)push('tasks',`Заняття «${e.t}» завершилось. Є домашнє завдання?`,`${td}|${e.id}|hw`,'hw:'+e.t)});
  S.tasks.concat(S.hw).forEach(t=>{if(!N.dl||t.done||t.st===2||t.due!==td||!t.tm)return;const d=mins(t.tm)-nm;if(d>0&&d<=120)push('tasks',`До дедлайну «${t.t}» залишилось ${fmtDur(d)}.`,`${td}|${t.id}|dl`)});
- const ds=dayStats(td);if(N.soc&&ds.soc>S.set.social)push('social',`Ти перевищив денний ліміт соцмереж на ${fmtDur(ds.soc-S.set.social)}.`,`${td}|soc`);
+ const ds=dayStats(td);if(N.soc&&S.set.social>0){const lim=S.set.social,u=socToday();if(u>=lim*0.8&&u<lim)push('social',`Ти вже ${fmtDur(u)} у соцмережах із ${fmtDur(lim)}. Скоро час відкласти телефон.`,`${td}|soc80`);if(u>=lim){const k=Math.floor((u-lim)/30);push('social',k?`Вже ${fmtDur(u)} у соцмережах, ліміт перевищено на ${fmtDur(u-lim)}. Досить сидіти, відклади телефон.`:`Ліміт соцмереж вичерпано (${fmtDur(lim)}). Досить сидіти, відклади телефон і зроби перерву.`,`${td}|soc|${k}`)}}
  const f=finStats(n);if(N.bud&&f.B&&f.today>f.lim&&f.today>0)push('finance',`Сьогодні витрати вже ${fmt(f.today)} — вище за ліміт ${fmt(f.lim)}.`,`${td}|bud`);
- if(N.rep&&nm>=mins(S.set.morning)&&nm<13*60){const y=dayStats(shift(td,-1)),ev=occ(td);push('report',`☀️ Good morning, ${S.set.name}. Занять: ${ev.length}, завдань: ${S.tasks.filter(t=>!t.done&&t.due&&t.due<=td).length}.${ev[0]?' Перша подія: '+ev[0].s+' — '+ev[0].t+'.':''} Вчора: навчання ${fmtDur(y.study)}, соцмережі ${fmtDur(y.soc)}.`,`${td}|morning`)}
+ if(N.rep&&nm>=mins(S.set.morning)&&nm<13*60){const y=dayStats(shift(td,-1)),ev=occ(td);push('report',`☀️ Доброго ранку${S.set.name?', '+S.set.name:''}. Занять: ${ev.length}, завдань: ${S.tasks.filter(t=>!t.done&&t.due&&t.due<=td).length}.${ev[0]?' Перша подія: '+ev[0].s+' — '+ev[0].t+'.':''} Вчора: навчання ${fmtDur(y.study)}, соцмережі ${fmtDur(y.soc)}.`,`${td}|morning`)}
  if(N.rep&&nm>=mins(S.set.evening)){const d=dayStats(td);push('report',`🌙 Підсумок дня: виконано ${d.done}, лишилось ${d.left}. Focus ${fmtDur(d.focus)}, соцмережі ${fmtDur(d.soc)}, витрати ${fmt(d.spent)}, звички ${d.hab}/${S.habits.length}. На завтра: ${d.tom}.`,`${td}|evening`)}
  const old=ymd(new Date(Date.now()-4*864e5));Object.keys(S.fired).forEach(k=>{if(k.slice(0,10)<old)delete S.fired[k]})}
 
@@ -430,8 +477,10 @@ function pHome(){const n=new Date(),td=ymd(n),nm=n.getHours()*60+n.getMinutes(),
  const strip=(()=>{const a=360,b=1440,span=b-a,pc=m=>Math.max(0,Math.min(100,(m-a)/span*100));return `<div class="strip" aria-label="Шкала дня"><div class="track">${evs.map(e=>`<i style="left:${pc(mins(e.s))}%;width:${Math.max(1.4,pc(mins(e.e))-pc(mins(e.s)))}%;--c:${esc(e.color)}" title="${esc(e.t)} ${e.s}–${e.e}"></i>`).join('')}${nm>=a?`<u style="left:${pc(nm)}%"></u>`:''}</div><div class="ticks">${[6,9,12,15,18,21,24].map(x=>`<span style="left:${(x*60-a)/span*100}%">${x}</span>`).join('')}</div></div>`})();
  const de=S.diary[td]||{},wrote=!!(de.t&&de.t.trim());
  const moodCard=`<div class="card"><div class="row" style="border:0;padding:0"><div class="grow" style="cursor:default"><small class="k">Щоденник</small><h2>${de.m?MOODN[de.m]+' · '+MOODE[de.m]:'Як ти сьогодні?'}</h2></div><button class="btn" data-a="dopen" data-i="${td}">${wrote?'Читати':'Писати'}</button></div><div class="moods">${[1,2,3,4,5].map(m=>`<button class="mo ${de.m===m?'on':''}" style="--c:${MOODC[m]}" data-a="dmood" data-i="${m}" aria-label="${MOODN[m]}">${MOODE[m]}</button>`).join('')}</div></div>`;
+ const sl0=S.set.social||0,su0=socToday(),sp0=sl0?Math.min(100,su0/sl0*100):0;
+ const socCard=`<div class="card"><div class="row" style="border:0;padding:0"><div class="grow" style="cursor:default"><small class="k">Соцмережі</small><h2>${fmtDur(su0)}${sl0?' / '+fmtDur(sl0):''}</h2></div>${S.sct?`<button class="btn dng" data-a="sstop">■ ${an(S.sct.app)} ${liveMin()} хв</button>`:'<button class="btn" data-a="sopen">Облік</button>'}</div><div class="meter${sl0&&su0>=sl0?' over':''}" style="margin-top:12px"><i style="width:${sp0}%"></i></div>${sl0&&su0>=sl0?'<small style="margin-top:8px">Ліміт вичерпано. Час відкласти телефон.</small>':''}</div>`;
  const quoteCard=S.set.qon?`<div class="card" data-a="nq" style="cursor:pointer"><small class="k">Цитата дня</small><div class="qt" id="qt">${qHTML()}</div></div>`:'';
- return `<small class="date">${DAYS[n.getDay()]}, ${n.getDate()} ${MON[n.getMonth()]}${h?' · 🎉 '+h:''}</small><h1 class="hello">${n.getHours()<5?'Доброї ночі':n.getHours()<12?'Доброго ранку':n.getHours()<18?'Доброго дня':'Добрий вечір'}, ${esc(S.set.name)}</h1>
+ return `<small class="date">${DAYS[n.getDay()]}, ${n.getDate()} ${MON[n.getMonth()]}${h?' · 🎉 '+h:''}</small><h1 class="hello">${n.getHours()<5?'Доброї ночі':n.getHours()<12?'Доброго ранку':n.getHours()<18?'Доброго дня':'Добрий вечір'}${S.set.name?', '+esc(S.set.name):''}</h1>
  <form class="card" id="smart" style="display:flex;gap:8px;align-items:center"><input id="smi" placeholder="Напиши: здати історію в четвер о 18:00" autocomplete="off" style="margin:0"><button class="btn pri" aria-label="Додати">➤</button></form>
  <div class="top"><div class="card hero"><small class="k">Зараз</small><div class="big" id="clock">${hm(n)}:${pad(n.getSeconds())}</div><h2>${cur?esc(cur.t):'Вільний час'}</h2>${cur?`<small>до ${cur.e} · залишилось ${fmtDur(mins(cur.e)-nm)}</small>`:''}
  ${nx?`<div class="row" style="margin-top:10px"><div class="grow"><small>Наступна подія</small><strong>${nx.s} ${esc(nx.t)}</strong><small>Через ${fmtDur(mins(nx.s)-nm)}</small></div><button class="btn" data-a="evedit" data-i="${nx.id}">Відкрити</button></div>`:'<small style="margin-top:8px">Більше подій сьогодні немає</small>'}${strip}</div>
@@ -439,7 +488,7 @@ function pHome(){const n=new Date(),td=ymd(n),nm=n.getHours()*60+n.getMinutes(),
  <div class="grid3"><div><small>🎯 Focus</small><b>${fmtDur(ds.focus)}</b></div><div><small>💰 Витрати</small><b>${fs0.B?Math.round(ds.spent)+' / '+Math.round(fs0.lim):Math.round(ds.spent)}</b></div><div><small>🔥 Серія</small><b>${Math.max(0,...S.habits.map(streak))} дн.</b></div></div>
  ${tk.length?`<small style="margin-top:14px">📌 Важливі справи</small>${tk.slice(0,3).map(t=>`<div style="padding:3px 0">• ${esc(t.t)}</div>`).join('')}`:''}
  <button class="btn pri" style="width:100%;margin-top:14px" data-a="gofocus">▶ Почати фокус</button></div></div>
- <div class="grid">${moodCard}${quoteCard}</div>
+ <div class="grid">${moodCard}${socCard}${quoteCard}</div>
  ${al.map(a=>`<div class="alert"><span>⚠️ ${esc(a[0])}</span>${a[1]?`<button class="btn" data-a="${a[2]}">${a[1]}</button>`:''}</div>`).join('')}
  <div class="grid"><div class="card"><h3>Розклад дня</h3>${tl||'<div class="empty">Сьогодні вільний день.</div>'}</div>
  <div class="card"><h3>Завдання на сьогодні</h3>${tk.map(taskRow).join('')||'<div class="empty">Сьогодні все виконано.</div>'}</div></div>
@@ -473,8 +522,6 @@ function pFocus(){const r=S.run,td=ymd(new Date()),tm=S.tm;const ses=S.focus.con
  <div class="card"><h3>Облік часу</h3>${tm?`<div class="big" id="tmclock" style="font-size:2rem">0:00</div><small>${esc(tm.t)} · ${esc(tm.cat)}</small><div class="row"><button class="btn pri" data-a="tmstop">STOP</button></div>`:`<label>Задача<input id="tmt" placeholder="Напр. Python"></label><label>Категорія<select id="tmc">${TCATS.map(c=>`<option>${c}</option>`).join('')}</select></label><button class="btn pri" data-a="tmstart">START</button>`}</div>
  <div class="card"><h3>Останні сесії</h3>${ses.map(x=>`<div class="row"><div class="grow" style="cursor:default"><strong>${esc(x.t||'Focus')}</strong><small>${new Date(x.ts).toLocaleString('uk-UA',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})} · ${x.tm?esc(x.cat):'Focus'}</small></div><b>${fmtDur(x.min)}</b></div>`).join('')||'<div class="empty">Сесій ще немає.</div>'}</div>`}
 
-function pMore(){const T=[['fin','Фінанси'],['hab','Звички'],['notes','Нотатки'],['stats','Статистика'],['set','Налаштування']];
- return `<h1>Більше</h1><div class="chips">${T.map(([k,l])=>`<button class="chip ${mt===k?'on':''}" data-a="mt" data-i="${k}">${l}</button>`).join('')}</div>${({fin:pFin,hab:pHab,notes:pNotes,stats:pStats,set:pSet})[mt]()}`}
 
 function pFin(){const f=finStats(),pct=f.B?Math.min(100,(f.B-f.left)/f.B*100):0,byc={};f.ex.forEach(e=>byc[e.c]=(byc[e.c]||0)+e.a);
  const list=S.exp.filter(e=>mkey(e.d)===f.m).sort((a,b)=>b.d.localeCompare(a.d));
@@ -512,19 +559,21 @@ function pSet(){const s=S.set,n=s.n,kb=Math.round(JSON.stringify(S).length/1024)
  <div class="card"><h3>Профіль</h3>${fld('name','Ім\'я',s.name)}</div>
  <div class="card"><h3>Планування і гроші</h3><label>Тиждень починається з<select data-s="ws">${opt([[1,'Понеділка'],[0,'Неділі']],s.ws)}</select></label><label>Валюта<select data-s="cur">${opt([['грн','Гривня (грн)'],['$','Долар ($)'],['€','Євро (€)'],['zł','Злотий (zł)']],s.cur)}</select></label>${fld('budget','Місячний бюджет',s.budget||'','number')}${fld('social','Денний ліміт соцмереж, хв',s.social,'number')}</div>
  <div class="card"><h3>Цитати</h3>${tg('qon','Показувати цитати на Home','Змінюються автоматично, клік — наступна',s.qon)}<label style="margin-top:8px">Змінювати кожні<select data-s="qint">${opt([[10,'10 секунд'],[20,'20 секунд'],[40,'40 секунд'],[60,'1 хвилину']],s.qint)}</select></label></div>
- <div class="card"><h3>Сповіщення</h3><small style="margin-bottom:8px">Працюють, поки вкладка відкрита. Системний дозвіл: ${'Notification' in window?Notification.permission:'не підтримується'}</small><button class="btn" data-a="notif">Увімкнути системні сповіщення</button>
+ ${pushCard()}
+ <div class="card"><h3>Сповіщення</h3><small style="margin-bottom:8px">Тут вибираєш, про що нагадувати. Дозвіл браузера: ${'Notification' in window?({granted:'дозволено',denied:'заборонено',default:'ще не запитували'})[Notification.permission]:'не підтримується'}</small><button class="btn" data-a="notif">Увімкнути системні сповіщення</button>
  ${tg('n.ev30','За 30 хв до події','',n.ev30)}${tg('n.ev5','За 5 хв до події','',n.ev5)}${tg('n.hw','Питати про домашнє після заняття','',n.hw)}${tg('n.dl','Дедлайни за 2 години','',n.dl)}${tg('n.soc','Ліміт соцмереж','',n.soc)}${tg('n.bud','Денний ліміт витрат','',n.bud)}${tg('n.rep','Ранковий і вечірній звіти','',n.rep)}${tg('sound','Звук','Сигнал після Focus і перерви',s.sound)}
  <div style="margin-top:10px">${fld('morning','Час ранкового брифінгу',s.morning,'time')}${fld('evening','Час вечірнього підсумку',s.evening,'time')}</div></div>
+ ${shareCard()}
  <div class="card"><h3>Безпека</h3><small style="margin-bottom:10px">Усі дані шифруються твоїм паролем (AES-256) і лежать лише на цьому пристрої. Після входу пристрій запам'ятовується, доки не натиснеш «Заблокувати».</small><div class="chips"><button class="btn" data-a="chpw">Змінити пароль</button><button class="btn" data-a="logout">Заблокувати</button></div></div>
  <div class="card"><h3>Телефон</h3>${(matchMedia('(display-mode: standalone)').matches||navigator.standalone)?'<small>Застосунок уже встановлено на цьому пристрої.</small>':dip?'<button class="btn pri" data-a="install">Встановити як застосунок</button>':'<small>Android (Chrome): меню ⋮ → «Встановити застосунок». iPhone (Safari): «Поділитися» → «На початковий екран».</small>'}</div>
  <div class="card"><h3>Дані й акаунт</h3><small style="margin-bottom:10px">Зберігається в цьому браузері: ${kb} КБ · подій ${S.events.length}, завдань ${S.tasks.length}, нотаток ${S.notes.length}</small><div class="chips"><button class="btn" data-a="exp">Експорт JSON</button><button class="btn" data-a="imp">Імпорт</button><button class="btn dng" data-a="reset">Видалити всі дані</button></div></div>
  <small style="text-align:center">MYDAY 2.0 · дані лишаються на твоєму пристрої</small>`}
 /* ---------- рендер і навігація ---------- */
 const PAGES={home:pHome,cal:pCal,tasks:pTasks,focus:pFocus,diary:pDiary,more:pMore};
-const NAV=[['home',`<svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>`,'Головна'],['cal',`<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>`,'Календар'],['tasks',`<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg>`,'Завдання'],['focus',`<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M9.5 3h5"/></svg>`,'Focus'],['diary',`<svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7.5h6"/></svg>`,'Щоденник'],['more',`<svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18.5" cy="12" r="1.2"/></svg>`,'Ще']];
-$('#nav').innerHTML=NAV.map(([k,i,l])=>`<button data-a="go" data-i="${k}"><span>${i}</span>${l}</button>`).join('');
+const NAV=[['notes',`Нотатки`,'<svg viewBox="0 0 24 24"><path d="M5 4h14v11l-5 5H5z"/><path d="M14 20v-5h5M8.5 9h7M8.5 12.5h4"/></svg>'],['cal',`Календар`,'<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>'],['tasks',`Завдання`,'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg>'],['home',`Головна`,'<svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>'],['focus',`Focus`,'<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M9.5 3h5"/></svg>'],['diary',`Щоденник`,'<svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7.5h6"/></svg>'],['more',`Ще`,'<svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18.5" cy="12" r="1.2"/></svg>']];
+$('#nav').innerHTML='<div id="navs">'+NAV.map(([k,l,i])=>`<button data-a="go" data-i="${k}"${k==='home'?' class="hm"':''}><span>${i}</span>${l}</button>`).join('')+'</div><i id="nline"><b></b></i>';
 function render(keepScroll){const y=scrollY;const v=$('#view');v.innerHTML=PAGES[pg]();v.className='';if(!keepScroll){void v.offsetWidth;v.className='fade'}
- document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.i===pg));bc();scrollTo(0,keepScroll?y:0)}
+ {const ak0=pg==='more'&&mt==='notes'?'notes':pg;document.querySelectorAll('#navs button').forEach(b=>b.classList.toggle('on',b.dataset.i===ak0));navCenter(1)}bc();scrollTo(0,keepScroll?y:0)}
 
 /* ---------- Focus / таймер ---------- */
 function startRun(k,min,title,br){S.run={k,end:Date.now()+min*6e4,total:min*6e4,st:Date.now(),title,br};save();render()}
@@ -535,11 +584,11 @@ function finishRun(auto){const r=S.run;if(!r)return;S.run=null;
 function tick(){const n=new Date(),c=$('#clock');if(S.set.qon&&++qtk>=(S.set.qint||20)){qtk=0;nextQ()}if(c)c.textContent=`${hm(n)}:${pad(n.getSeconds())}`;
  const r=S.run;if(r){const left=r.end-Date.now();if(left<=0)return finishRun(true);const f=$('#fclock');if(f){const s=Math.ceil(left/1e3);f.textContent=`${pad(Math.floor(s/60))}:${pad(s%60)}`;$('#fring').style.setProperty('--p',100-left/r.total*100)}document.title=`${pad(Math.floor(left/6e4))}:${pad(Math.ceil(left/1e3)%60)} · MYDAY`}else document.title='MYDAY';
  const t=$('#tmclock');if(t&&S.tm){const m=Math.floor((Date.now()-S.tm.st)/6e4);t.textContent=`${Math.floor(m/60)}:${pad(m%60)}`}
- if(n.getSeconds()%30===0){checks(n);if(pg==='home'&&!$('.modal')&&document.activeElement.id!=='smi')render(true)}}
+ if(n.getSeconds()%30===0){checks(n);pushSync();if((pg==='home'||(pg==='more'&&(mt==='soc'||!mt)))&&!$('.modal')&&document.activeElement.id!=='smi')render(true)}}
 
 /* ---------- дії ---------- */
 const A={
-go:i=>{pg=i;render()},mt:i=>{mt=i;render()},tf:i=>{tf=i;render()},cv:i=>{cv=i;render()},
+go:i=>{if(i==='notes'){pg='more';mt='notes'}else{pg=i;if(i==='more')mt=''}render()},mt:i=>{mt=i;render()},tf:i=>{tf=i;render()},cv:i=>{cv=i;render()},
 cnav:i=>{const d=new Date(cd+'T00:00'),k=+i;if(cv==='month'){d.setDate(1);d.setMonth(d.getMonth()+k)}else d.setDate(d.getDate()+k*(cv==='week'?7:1));cd=ymd(d);render()},
 ctoday:()=>{cd=ymd(new Date());render()},goday:i=>{cd=i;cv='day';render()},
 evedit:i=>evForm(i),
@@ -576,13 +625,13 @@ plus:()=>{const m=modal(`<h3>Швидке додавання</h3><div class="the
 function habForm(id,pre){const h=id&&S.habits.find(x=>x.id===id);form(h?'Звичка':'Нова звичка',[{k:'t',l:'Назва (напр. English 30 хв)',req:1},{k:'target',l:'Разів на тиждень',t:'select',o:[1,2,3,4,5,6,7].map(n=>[n,n])}],h||{target:7,...pre},v=>{const t=v.t.trim();if(!t)return false;if(h){h.t=t;h.target=+v.target}else S.habits.push({id:uid(),t,target:+v.target,log:{}});save();render();toast('Звичку збережено')},h&&(()=>{S.habits=S.habits.filter(x=>x.id!==id);save();render();toast('Звичку видалено')}))}
 document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(el&&A[el.dataset.a])A[el.dataset.a](el.dataset.i)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=[...document.querySelectorAll('.modal')].pop();m&&m.remove()}});
-$('#imp').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d||!Array.isArray(d.events)||!d.set)throw 0;ask('Поточні дані буде замінено даними з файлу. Продовжити?','Імпортувати',()=>{S=merge(d);save().then(()=>location.reload())})}catch{toast('Невірний файл резервної копії')}};r.readAsText(f);e.target.value=''};
+$('#imp').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d||!Array.isArray(d.events)||!d.set)throw 0;ask('Поточні дані буде замінено даними з файлу. Продовжити?','Імпортувати',()=>{S=merge(d);S.set.push=null;S.sct=null;save().then(()=>location.reload())})}catch{toast('Невірний файл резервної копії')}};r.readAsText(f);e.target.value=''};
 
 
 const NUM=['fs','ws','qint','social','budget'];
 document.addEventListener('change',e=>{const el=e.target,k=el.dataset.t,f=el.dataset.s;
  if(k){const p=k.split('.'),o=p.length>1?S.set[p[0]]:S.set;o[p.pop()]=el.checked}
- else if(f){let v=el.value;if(NUM.includes(f)){v=+v;if(!(v>=0))return}else if(f==='name')v=v.trim()||'Денис';else if((f==='morning'||f==='evening')&&!v)return;S.set[f]=v}
+ else if(f){let v=el.value;if(NUM.includes(f)){v=+v;if(!(v>=0))return}else if(f==='name')v=v.trim();else if((f==='morning'||f==='evening')&&!v)return;S.set[f]=v}
  else return;
  save();applyTheme();bgSync();render(true);toast('Збережено')});
 /* 3D-фон: обертова хмара частинок із перспективою */
@@ -722,33 +771,172 @@ Object.assign(A,{
  nchk:i=>{const [id,ix]=i.split('|'),n=S.notes.find(x=>x.id===id);if(!n)return;const L=n.b.split('\n');L[+ix]=L[+ix].replace(/\[( |x|X)\]/,(_,c)=>c===' '?'[x]':'[ ]');n.b=L.join('\n');save();render(true)}
 });
 /* ---------- безпека: дані шифруються паролем (AES-256-GCM, ключ з PBKDF2) ---------- */
-const DEFAULT_VAULT={"v":1,"salt":"GHt2tfNdClQHw4dYNtP4eQ==","iter":600000,"chk":{"iv":"6mRRGwULoyqa0N9k","ct":"2XEBZJT95jIAb1OVsmczGVR1diq/QrGA"}};
+const LEGACY_VAULT={"v":1,"salt":"GHt2tfNdClQHw4dYNtP4eQ==","iter":600000,"chk":{"iv":"6mRRGwULoyqa0N9k","ct":"2XEBZJT95jIAb1OVsmczGVR1diq/QrGA"}};
 const TE=new TextEncoder(),TD=new TextDecoder();
 const b64=u=>{let s='';const a=new Uint8Array(u);for(let i=0;i<a.length;i+=8192)s+=String.fromCharCode.apply(null,a.subarray(i,i+8192));return btoa(s)};
 const unb64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 async function derive(pw,salt,iter){const k=await crypto.subtle.importKey('raw',TE.encode(pw),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:iter,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
 async function seal(key,obj){const iv=crypto.getRandomValues(new Uint8Array(12));const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,TE.encode(JSON.stringify(obj)));return{iv:b64(iv),ct:b64(ct)}}
 async function unseal(key,box){return JSON.parse(TD.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(box.iv)},key,unb64(box.ct))))}
-const getVault=()=>{try{return JSON.parse(localStorage.getItem('myday_vault'))||DEFAULT_VAULT}catch{return DEFAULT_VAULT}};
+const getVault=()=>{try{const v=JSON.parse(localStorage.getItem('myday_vault'));if(v)return v}catch{}return localStorage.getItem('myday_enc')?LEGACY_VAULT:null};
 /* «запам'ятати пристрій»: ключ лежить у IndexedDB як неекспортований CryptoKey — прочитати його як текст неможливо */
 const idb=()=>new Promise((res,rej)=>{const r=indexedDB.open('myday_k',1);r.onupgradeneeded=()=>r.result.createObjectStore('k');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
 const idbDo=async(mode,fn)=>{const d=await idb();return new Promise((res,rej)=>{const t=d.transaction('k',mode),rq=fn(t.objectStore('k'));t.oncomplete=()=>res(rq&&rq.result);t.onerror=()=>rej(t.error)})};
 const keyPut=k=>idbDo('readwrite',s=>s.put(k,'main')).catch(()=>{});
 const keyGet=()=>idbDo('readonly',s=>s.get('main')).catch(()=>null);
 const keyDel=()=>idbDo('readwrite',s=>s.delete('main')).catch(()=>{});
-function merge(o){const x=Object.assign(def(),o);x.set=Object.assign(def().set,x.set);x.set.n=Object.assign(def().set.n,x.set.n);if(x.set.name==='Дєня')x.set.name='Денис';return x}
+function merge(o){const x=Object.assign(def(),o);x.set=Object.assign(def().set,x.set);x.set.n=Object.assign(def().set.n,x.set.n);return x}
 async function loadData(){const box=localStorage.getItem('myday_enc');
  if(box){S=merge(await unseal(KEY,JSON.parse(box)));return}
  const plain=localStorage.getItem('myday');
  if(plain){try{S=merge(JSON.parse(plain))}catch{S=def()}await save();if(localStorage.getItem('myday_enc')){localStorage.removeItem('myday');['myday_auth','myday_in'].forEach(k=>localStorage.removeItem(k))}}
  else S=def()}
+/* ---------- v5: навігація, соцмережі, сповіщення ---------- */
+const IC=p=>`<svg viewBox="0 0 24 24">${p}</svg>`;
+const an=k=>(APPS.find(a=>a[0]===k)||[k,k])[1],ak=k=>APPS.some(a=>a[0]===k)?k:'other';
+const liveMin=()=>S.sct?Math.max(0,Math.floor((Date.now()-S.sct.st)/6e4)):0;
+const socToday=()=>social(ymd(new Date()))+liveMin();
+function addSoc(app,min){const td=ymd(new Date()),o=S.sc[td]||(S.sc[td]={});o[app]=(+o[app]||0)+min;save();checks(new Date())}
+function sysNotify(txt,tag){if(S.set.push&&S.set.push.on)return;if(!('Notification' in window)||Notification.permission!=='granted')return;
+ const o={body:txt,icon:'icon-192.png',badge:'icon-192.png',tag:tag||'myday',renotify:true,vibrate:[140,70,140]};
+ const fb=()=>{try{new Notification('MYDAY',o)}catch{}};
+ if('serviceWorker' in navigator)navigator.serviceWorker.getRegistration().then(r=>r?r.showNotification('MYDAY',o):fb()).catch(fb);else fb()}
+const HUB=[
+ ['soc','Соцмережі','#ef4444',IC('<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>'),()=>fmtDur(socToday())+(S.set.social?' із '+fmtDur(S.set.social):'')+' сьогодні'],
+ ['fin','Фінанси','#a855f7',IC('<rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 15h2"/>'),()=>'Витрати сьогодні: '+fmt(dayStats(ymd(new Date())).spent)],
+ ['hab','Звички','#34d399',IC('<path d="M12 21c-4 0-7-2.6-7-6.4 0-2.7 1.7-4.4 3-6 .8-1 1.4-2.2 1.5-3.6 3 1.6 4.5 3.6 4.5 6 1-.5 1.6-1.4 1.8-2.4 1.5 1.6 2.2 3.4 2.2 6C18 18.4 16 21 12 21z"/>'),()=>`${S.habits.filter(h=>h.log[ymd(new Date())]).length} з ${S.habits.length} сьогодні`],
+ ['notes','Нотатки','#fbbf24',IC('<path d="M5 4h14v11l-5 5H5z"/><path d="M14 20v-5h5M8.5 9h7M8.5 12.5h4"/>'),()=>S.notes.length+' шт.'],
+ ['stats','Статистика','#22d3ee',IC('<path d="M5 20V11M12 20V5M19 20v-7"/>'),()=>'Focus '+fmtDur(dayStats(ymd(new Date())).focus)+' сьогодні'],
+ ['set','Налаштування','#8b5cf6',IC('<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>'),()=>'Сповіщення, безпека, телефон']];
+const MT=Object.fromEntries(HUB.map(h=>[h[0],h[1]]));
+function pMore(){const PM={soc:pSoc,fin:pFin,hab:pHab,notes:pNotes,stats:pStats,set:pSet};
+ if(!mt||!PM[mt]){mt='';const sl=S.set.social,su=socToday(),sp=sl?Math.min(100,su/sl*100):0;
+  return `<h1>Ще</h1><div class="hub">${HUB.map(([k,t,c,i,f])=>`<button class="tile${k==='soc'?' wide':''}" style="--c:${c}" data-a="mt" data-i="${k}"><span class="ti">${i}</span>${k==='soc'?`<div class="grow" style="cursor:inherit"><strong>${t}</strong><small>${esc(f())}</small><div class="meter${sl&&su>=sl?' over':''}" style="margin-top:10px"><i style="width:${sp}%"></i></div></div>`:`<strong>${t}</strong><small>${esc(f())}</small>`}</button>`).join('')}</div>
+  <div class="card"><div class="row" style="border:0;padding:0"><div class="grow" style="cursor:default"><strong>Захист</strong><small>Дані зашифровано паролем, цей пристрій запам'ятовано</small></div><button class="btn" data-a="logout">Заблокувати</button></div></div>`}
+ return `<div class="sechead"><button class="btn back" data-a="mt" data-i="" aria-label="Назад">‹</button><h1>${MT[mt]}</h1></div>${PM[mt]()}`}
+function pSoc(){const td=ymd(new Date()),sc0=S.sc[td]||{},run=S.sct,sl=S.set.social||0,su=socToday(),sp=sl?Math.min(100,su/sl*100):0;
+ const base=/^https?:/.test(location.protocol)?location.origin+location.pathname:'https://твій-сайт/';
+ const d7=[...Array(7)].map((_,i)=>shift(td,i-6)),v7=d7.map(x=>social(x)+(x===td?liveMin():0)),mx=Math.max(1,...v7,sl);
+ return `<div class="card hero"><small class="k">Сьогодні</small><div class="big">${fmtDur(su)}</div><small>${sl?(su>=sl?'Ліміт '+fmtDur(sl)+' вичерпано':'Залишилось '+fmtDur(sl-su)+' з '+fmtDur(sl)):'Ліміт не задано: Налаштування → Планування'}</small><div class="meter${sl&&su>=sl?' over':''}" style="margin-top:14px"><i style="width:${sp}%"></i></div></div>
+ <div class="card"><h3>${run?'Зараз: '+an(run.app):'Я зайшов у…'}</h3>${run?`<div class="row" style="border:0"><div class="grow" style="cursor:default"><strong>${liveMin()} хв</strong><small>з ${hm(new Date(run.st))}</small></div><button class="btn pri" data-a="sstop">■ Закінчив</button></div>`:`<div class="chips">${APPS.map(([k,n])=>`<button class="chip" data-a="sstart" data-i="${k}">▶ ${n}</button>`).join('')}</div><small>Натисни, коли відкриваєш застосунок, і «Закінчив», коли виходиш. Час додасться сам, а при ліміті прийде сповіщення.</small>`}</div>
+ <div class="card"><h3>Додати вручну</h3>${APPS.map(([k,n])=>`<div class="row"><div class="grow" style="cursor:default"><strong>${n}</strong><small>${sc0[k]?fmtDur(sc0[k])+' сьогодні':'—'}</small></div><button class="btn" data-a="sadd" data-i="${k}|5">+5</button><button class="btn" data-a="sadd" data-i="${k}|15">+15</button><button class="btn" data-a="sadd" data-i="${k}|30">+30</button></div>`).join('')}</div>
+ <div class="card"><h3>7 днів</h3><div class="bars">${d7.map((x,i)=>`<div title="${fmtDur(v7[i])}"><i style="height:${v7[i]/mx*100}%;${sl&&v7[i]>sl?'background:linear-gradient(#f59e0b,#ef4444)':''}"></i>${new Date(x+'T00:00').getDate()}</div>`).join('')}</div></div>
+ <div class="card"><h3>Дані з телефона</h3><small style="margin-bottom:10px">Сайт не бачить інші застосунки сам, так влаштований браузер. Зате він приймає посилання, які можна запускати автоматикою телефона: iPhone — «Команди» → Автоматизація → «Застосунок закрито» → «Відкрити URL»; Android — MacroDroid або Tasker.</small>
+ <div class="row" style="align-items:flex-start"><div class="grow" style="cursor:default"><strong>Додати хвилини</strong><small style="word-break:break-all">${esc(base)}#log=tiktok:15</small></div><button class="btn" data-a="copylink" data-i="#log=tiktok:15">Копіювати</button></div>
+ <div class="row" style="align-items:flex-start"><div class="grow" style="cursor:default"><strong>Старт обліку</strong><small style="word-break:break-all">${esc(base)}#start=tiktok</small></div><button class="btn" data-a="copylink" data-i="#start=tiktok">Копіювати</button></div>
+ <div class="row" style="align-items:flex-start"><div class="grow" style="cursor:default"><strong>Стоп обліку</strong><small style="word-break:break-all">${esc(base)}#stop</small></div><button class="btn" data-a="copylink" data-i="#stop">Копіювати</button></div>
+ <small style="margin-top:8px">Точний денний підсумок дивись у Screen Time (iPhone) або Digital Wellbeing (Android) і вноси в Статистика → Screen Time.</small></div>`}
+function readLog(){const h=location.hash+'&'+location.search,out=[];let m;
+ if(m=h.match(/log=([a-zA-Z]+)[:=](\d{1,3})/))out.push(['log',m[1].toLowerCase(),Math.min(600,+m[2])]);
+ if(m=h.match(/start=([a-zA-Z]+)/))out.push(['start',m[1].toLowerCase()]);
+ if(/[#&?]stop\b/.test(h))out.push(['stop']);
+ if(out.length)try{history.replaceState(null,'',location.pathname)}catch{}return out}
+const LOGQ=readLog();
+addEventListener('hashchange',()=>{if(started)runLog(readLog())});
+function runLog(Q=LOGQ){Q.forEach(([t,a,m])=>{if(t==='log'&&m>0){addSoc(ak(a),m);toast(`+${m} хв ${an(ak(a))} додано`)}else if(t==='start')A.sstart(ak(a),1);else if(t==='stop')A.sstop(1)});if(Q.length){pg='more';mt='soc';render(true)}}
+function navSync(){const sc=$('#navs'),b=$('#nline b');if(!sc||!b||!sc.clientWidth)return;b.style.width=Math.min(100,sc.clientWidth/sc.scrollWidth*100)+'%';b.style.transform=`translateX(${sc.scrollLeft/sc.clientWidth*100}%)`}
+function navCenter(smooth){const sc=$('#navs'),b=sc&&sc.querySelector('.on');if(!b||sc.scrollWidth<=sc.clientWidth+2){navSync();return}sc.scrollTo({left:b.offsetLeft-(sc.clientWidth-b.offsetWidth)/2,behavior:smooth?'smooth':'auto'});navSync()}
+let navT=0;
+function navInit(){const sc=$('#navs');if(!sc)return;sc.addEventListener('scroll',()=>{navSync();const n=$('#nav');n.classList.add('sc');clearTimeout(navT);navT=setTimeout(()=>n.classList.remove('sc'),900)},{passive:true});addEventListener('resize',()=>{navSync();navCenter(0)});navCenter(0)}
+Object.assign(A,{
+ sstart:(i,q)=>{if(S.sct){const m=liveMin();if(m>=1)addSoc(S.sct.app,m)}S.sct={app:i,st:Date.now()};save();if(!q){render(true);toast('Облік '+an(i)+' запущено')}},
+ sstop:q=>{if(!S.sct)return;const m=liveMin(),a=S.sct.app;S.sct=null;if(m>=1)addSoc(a,m);else save();if(!q){render(true);toast(m>=1?`${an(a)}: додано ${fmtDur(m)}`:'Менше хвилини, не рахую')}},
+ sadd:i=>{const [a,m]=i.split('|');addSoc(a,+m);render(true);toast(`+${m} хв ${an(a)}`)},
+ sopen:()=>{pg='more';mt='soc';render()},
+ copylink:i=>{const u=(/^https?:/.test(location.protocol)?location.origin+location.pathname:'')+i;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast('Посилання скопійовано')).catch(()=>toast(u))}
+});
+/* ---------- v6: перший вхід для кожного, push на телефон ---------- */
+const PUSH_SERVER='';   /* ← адреса твого push-сервера (Cloudflare Worker), див. README. Якщо порожньо, користувач вводить її сам */
+const b64u=u=>b64(u).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const unb64u=s=>unb64(s.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-s.length%4)%4));
+const wpCat=(...a)=>{const o=new Uint8Array(a.reduce((n,x)=>n+x.length,0));let p=0;for(const x of a){o.set(x,p);p+=x.length}return o};
+async function wpHkdf(salt,ikm,info,len){const k=await crypto.subtle.importKey('raw',ikm,'HKDF',false,['deriveBits']);return new Uint8Array(await crypto.subtle.deriveBits({name:'HKDF',hash:'SHA-256',salt,info},k,len*8))}
+/* Web Push aes128gcm (RFC 8291): повідомлення шифруємо тут, сервер бачить лише шифротекст */
+async function wpEnc(sub,text){
+ const ua=unb64u(sub.keys.p256dh),auth=unb64u(sub.keys.auth);
+ const kp=await crypto.subtle.generateKey({name:'ECDH',namedCurve:'P-256'},true,['deriveBits']);
+ const asPub=new Uint8Array(await crypto.subtle.exportKey('raw',kp.publicKey));
+ const uaKey=await crypto.subtle.importKey('raw',ua,{name:'ECDH',namedCurve:'P-256'},false,[]);
+ const ecdh=new Uint8Array(await crypto.subtle.deriveBits({name:'ECDH',public:uaKey},kp.privateKey,256));
+ const salt=crypto.getRandomValues(new Uint8Array(16));
+ const ikm=await wpHkdf(auth,ecdh,wpCat(TE.encode('WebPush: info\0'),ua,asPub),32);
+ const cek=await wpHkdf(salt,ikm,TE.encode('Content-Encoding: aes128gcm\0'),16);
+ const nonce=await wpHkdf(salt,ikm,TE.encode('Content-Encoding: nonce\0'),12);
+ const key=await crypto.subtle.importKey('raw',cek,'AES-GCM',false,['encrypt']);
+ const ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv:nonce},key,wpCat(TE.encode(text),new Uint8Array([2]))));
+ const hdr=new Uint8Array(21);hdr.set(salt,0);new DataView(hdr.buffer).setUint32(16,4096);hdr[20]=65;
+ return wpCat(hdr,asPub,ct)}
+const shaHex=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',TE.encode(s)))].slice(0,16).map(x=>x.toString(16).padStart(2,'0')).join('');
+const pushBase=()=>((S.set.push&&S.set.push.url)||PUSH_SERVER).replace(/\/+$/,'');
+async function pushReq(path,body){const r=await fetch(pushBase()+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw new Error('сервер відповів '+r.status);return r.json()}
+let psT=0,psLast='',psErr='';
+function buildRem(){const now=Date.now(),N=S.set.n,out=[],nm=S.set.name?', '+S.set.name:'';
+ const add=(id,at,title,body)=>{if(at>now+5000&&at<now+72*36e5)out.push({id,at,title,body})};
+ const today=ymd(new Date());
+ for(let i=0;i<3;i++){const day=shift(today,i),evs=occ(day);
+  evs.forEach(e=>{const st=new Date(day+'T'+e.s).getTime();
+   if(N.ev30)add(`e|${e.id}|${day}|30`,st-30*6e4,e.t,`Починається о ${e.s}${e.loc?', '+e.loc:''} (через 30 хв)`);
+   if(N.ev5)add(`e|${e.id}|${day}|5`,st-5*6e4,e.t,`Починається о ${e.s} (через 5 хв)`)});
+  if(N.dl)S.tasks.filter(t=>!t.done&&t.due===day&&t.tm).forEach(t=>add(`t|${t.id}|${day}`,new Date(day+'T'+t.tm).getTime()-2*36e5,'Дедлайн через 2 години',t.t));
+  if(N.rep){add(`m|${day}`,new Date(day+'T'+S.set.morning).getTime(),'Доброго ранку'+nm,`Занять: ${evs.length}, завдань: ${S.tasks.filter(t=>!t.done&&t.due&&t.due<=day).length}`);add(`v|${day}`,new Date(day+'T'+S.set.evening).getTime(),'Підсумок дня','Відкрий MYDAY і глянь, як пройшов день.')}
+  if(!hasE(S.diary[day]))add(`d|${day}`,new Date(day+'T21:00').getTime(),'Щоденник','Запиши, як пройшов день.')}
+ if(N.soc&&S.sct&&S.set.social>0){const lim=S.set.social,t0=now+(lim-socToday())*6e4;
+  add(`s80|${S.sct.st}`,now+(lim*0.8-socToday())*6e4,'Соцмережі',`Вже ${fmtDur(Math.round(lim*0.8))} із ${fmtDur(lim)}. Скоро час відкласти телефон.`);
+  [0,1,2,3].forEach(k=>add(`s|${S.sct.st}|${k}`,t0+k*30*6e4,'Досить сидіти',`${an(S.sct.app)}: ліміт ${fmtDur(lim)} вичерпано. Відклади телефон.`))}
+ return out.sort((a,b)=>a.at-b.at).slice(0,200)}
+function pushSync(force){const c=S.set.push;if(!c||!c.on||!KEY)return;clearTimeout(psT);
+ psT=setTimeout(async()=>{try{const rem=buildRem(),h=await shaHex(JSON.stringify(rem));if(!force&&h===psLast)return;
+  const items=[];for(const r of rem)items.push({id:r.id,at:r.at,d:b64u(await wpEnc(c.sub,JSON.stringify({title:r.title,body:r.body,tag:r.id})))});
+  await pushReq('/sync',{e:c.sub.endpoint,h,items});psLast=h;psErr=''}catch(e){psErr=String(e.message||e)}},force?0:2500)}
+function pushCard(){const c=S.set.push,sup='serviceWorker' in navigator&&'PushManager' in window;
+ return `<div class="card"><h3>Сповіщення на телефон</h3>${!sup?`<small>Цей браузер не підтримує push-сповіщення. На iPhone додай застосунок на початковий екран (Safari → Поділитися) і відкрий його звідти.</small>`
+ :c&&c.on?`<small style="margin-bottom:12px">Увімкнено. Нагадування про події, дедлайни й ліміти приходять, навіть коли застосунок закритий.${psErr?`<br><b style="color:var(--dn)">Немає зв'язку з сервером: ${esc(psErr)}</b>`:''}</small><div class="chips"><button class="btn" data-a="ptest">Тестове сповіщення</button><button class="btn dng" data-a="poff">Вимкнути</button></div>`
+ :`<small style="margin-bottom:12px">Нагадування про події, дедлайни й ліміт соцмереж приходитимуть на телефон, навіть коли застосунок закритий. Тексти шифруються на твоєму пристрої: сервер бачить лише час. На iPhone спершу додай застосунок на початковий екран.</small>${PUSH_SERVER?'':'<label>Адреса push-сервера<input id="purl" placeholder="https://….workers.dev" inputmode="url" autocapitalize="off" autocorrect="off"></label>'}<button class="btn pri" data-a="pon" style="width:100%;padding:13px">Увімкнути сповіщення</button>`}</div>`}
+function shareCard(){return `<div class="card"><h3>Поділитись застосунком</h3><small style="margin-bottom:12px">Кожен створює власний пароль, а його дані лишаються тільки на його пристрої.</small><button class="btn" data-a="share">Надіслати посилання</button></div>`}
+Object.assign(A,{
+ pgo:()=>{pg='more';mt='set';render()},
+ pon:async()=>{const url=(PUSH_SERVER||($('#purl')&&$('#purl').value)||'').trim().replace(/\/+$/,'');
+  if(!/^https:\/\//.test(url))return toast('Вкажи адресу push-сервера (https://…)');
+  if(!('serviceWorker' in navigator)||!('PushManager' in window))return toast('Браузер не підтримує push. На iPhone спершу додай застосунок на початковий екран');
+  try{const p=await Notification.requestPermission();if(p!=='granted')return toast('Сповіщення не дозволено в налаштуваннях браузера');
+   const reg=await navigator.serviceWorker.ready,old=await reg.pushManager.getSubscription();if(old)await old.unsubscribe();
+   const vr=await fetch(url+'/vapid');if(!vr.ok)throw new Error('сервер відповів '+vr.status);const v=await vr.json();
+   const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:unb64u(v.pub)});
+   S.set.push={on:1,url:PUSH_SERVER?'':url,sub:sub.toJSON()};psLast='';psErr='';
+   const rem=buildRem(),h=await shaHex(JSON.stringify(rem)),items=[];
+   for(const r of rem)items.push({id:r.id,at:r.at,d:b64u(await wpEnc(S.set.push.sub,JSON.stringify({title:r.title,body:r.body,tag:r.id})))});
+   await pushReq('/sync',{e:S.set.push.sub.endpoint,h,items});psLast=h;
+   await pushReq('/test',{e:S.set.push.sub.endpoint,d:b64u(await wpEnc(S.set.push.sub,JSON.stringify({title:'MYDAY',body:'Сповіщення працюють',tag:'test'})))});
+   save();toast('Підключено. Тестове сповіщення вже летить');render(true)}
+  catch(e){S.set.push=null;save();toast('Не вийшло: '+(e.message||e))}},
+ ptest:async()=>{const c=S.set.push;if(!c)return;try{await pushReq('/test',{e:c.sub.endpoint,d:b64u(await wpEnc(c.sub,JSON.stringify({title:'MYDAY',body:'Сповіщення працюють',tag:'test'})))});toast('Тестове сповіщення надіслано')}catch(e){psErr=String(e.message||e);render(true);toast('Не вийшло: '+psErr)}},
+ poff:async()=>{const c=S.set.push;try{if(c)await pushReq('/unsub',{e:c.sub.endpoint})}catch{}try{const r=await navigator.serviceWorker.ready,s=await r.pushManager.getSubscription();if(s)await s.unsubscribe()}catch{}S.set.push=null;psLast='';save();render(true);toast('Push-сповіщення вимкнено')},
+ share:()=>{const u=location.origin+location.pathname,d={title:'MYDAY',text:'Планувальник дня: розклад, завдання, фокус, щоденник. Дані лишаються на твоєму пристрої.',url:u};
+  if(navigator.share)navigator.share(d).catch(()=>{});else (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast('Посилання скопійовано')).catch(()=>toast(u))}
+});
+const CUBE='<div class="sc"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>';
+const WEAK=['12345678','123456789','1234567890','password','qwerty123','qwertyui','11111111','87654321','password1'];
+function forgotPw(){if(!confirm('Пароль неможливо відновити: дані зашифровані ним. Стерти всі дані на цьому пристрої й почати заново?'))return;if(!confirm('Точно стерти? Це незворотно.'))return;
+ ['myday_enc','myday','myday_vault','myday_fail','myday_auth','myday_in'].forEach(k=>localStorage.removeItem(k));
+ (async()=>{try{const r=await navigator.serviceWorker.getRegistration(),s=r&&await r.pushManager.getSubscription();if(s)await s.unsubscribe()}catch{}await keyDel();location.reload()})()}
+function showSetup(){$('#app').hidden=true;const a=$('#auth');a.hidden=false;
+ a.innerHTML=`<div class="sheet">${CUBE}<div class="logo" style="justify-content:center;margin-bottom:6px">MYDAY</div><h1 style="text-align:center">Ласкаво просимо</h1><small style="text-align:center;margin:-8px 0 18px">Планувальник дня: розклад, завдання, фокус, щоденник і нотатки. Твої дані зашифровані паролем і лежать лише на цьому пристрої.</small><form><label>Як тебе звати?<input name="n" autocomplete="given-name" maxlength="30" required></label><input type="text" name="username" value="MYDAY" autocomplete="username" tabindex="-1" aria-hidden="true" style="position:absolute;opacity:0;height:0;width:0;padding:0;border:0;margin:0"><label>Придумай пароль (від 8 символів)<input name="p" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" required></label><label>Повтори пароль<input name="p2" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" required></label><label class="tg" style="border:0"><span>Запам'ятати цей пристрій</span><input type="checkbox" name="r" checked></label><small style="margin-bottom:8px">Пароль неможливо відновити. Якщо забудеш, дані втратяться, тому час від часу роби копію: Ще → Налаштування → Експорт.</small><small id="aerr" style="color:var(--dn);margin-bottom:8px;min-height:1.2em"></small><button class="btn pri" style="width:100%;padding:13px">Створити й почати</button></form></div>`;
+ $('#auth form').onsubmit=async e=>{e.preventDefault();const f=e.target.elements,err=$('#aerr'),btn=e.target.querySelector('.pri'),p=f.p.value;
+  if(p.length<8){err.textContent='Пароль закороткий: мінімум 8 символів';return}
+  if(/^(.)\1+$/.test(p)||WEAK.includes(p.toLowerCase())){err.textContent='Занадто простий пароль. Придумай інший';return}
+  if(p!==f.p2.value){err.textContent='Паролі не збігаються';return}
+  btn.disabled=true;btn.textContent='Створюю…';err.textContent='';
+  try{const salt=crypto.getRandomValues(new Uint8Array(16)),iter=600000,key=await derive(p,salt,iter),vault={v:1,salt:b64(salt),iter,chk:await seal(key,{ok:1})};
+   S=def();S.set.name=f.n.value.trim();KEY=key;localStorage.setItem('myday_vault',JSON.stringify(vault));if(f.r.checked)await keyPut(key);await save();start()}
+  catch{err.textContent='Не вдалося створити сховище. Онови сторінку й спробуй ще раз';btn.disabled=false;btn.textContent='Створити й почати'}}}
 let started=0,dip=null;
-function start(){if(started)return;started=1;const a=$('#auth');a.hidden=true;a.innerHTML='';$('#app').hidden=false;applyTheme();bgSync();applyRec();render();checks(new Date());setInterval(tick,1000)}
+function start(){if(started)return;started=1;const a=$('#auth');a.hidden=true;a.innerHTML='';$('#app').hidden=false;applyTheme();bgSync();applyRec();render();navInit();runLog(LOGQ.concat(readLog()));pushSync(1);checks(new Date());setInterval(tick,1000)}
 async function boot(){
  try{const k=await keyGet();if(k){try{await unseal(k,getVault().chk);KEY=k;await loadData();return start()}catch{await keyDel();KEY=null}}}catch{}
  showAuth()}
-function showAuth(){$('#app').hidden=true;const a=$('#auth');a.hidden=false;
- a.innerHTML=`<div class="sheet"><div class="sc"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="logo" style="justify-content:center;margin-bottom:6px">MYDAY</div><h1 style="text-align:center">Вхід</h1><form><input type="text" name="username" value="MYDAY" autocomplete="username" tabindex="-1" aria-hidden="true" style="position:absolute;opacity:0;height:0;width:0;padding:0;border:0;margin:0"><label>Пароль<input name="p" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" required autofocus></label><label class="tg" style="border:0"><span>Запам'ятати цей пристрій</span><input type="checkbox" name="r" checked></label><small id="aerr" style="color:var(--dn);margin-bottom:8px;min-height:1.2em"></small><button class="btn pri" style="width:100%;padding:13px">Увійти</button></form></div>`;
+function showAuth(){if(!getVault())return showSetup();$('#app').hidden=true;const a=$('#auth');a.hidden=false;
+ a.innerHTML=`<div class="sheet"><div class="sc"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="logo" style="justify-content:center;margin-bottom:6px">MYDAY</div><h1 style="text-align:center">Вхід</h1><form><input type="text" name="username" value="MYDAY" autocomplete="username" tabindex="-1" aria-hidden="true" style="position:absolute;opacity:0;height:0;width:0;padding:0;border:0;margin:0"><label>Пароль<input name="p" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" required autofocus></label><label class="tg" style="border:0"><span>Запам'ятати цей пристрій</span><input type="checkbox" name="r" checked></label><small id="aerr" style="color:var(--dn);margin-bottom:8px;min-height:1.2em"></small><button class="btn pri" style="width:100%;padding:13px">Увійти</button><button type="button" class="btn" data-forgot style="width:100%;margin-top:10px">Забув пароль</button></form></div>`;
+ $('#auth [data-forgot]').onclick=forgotPw;
  $('#auth form').onsubmit=async e=>{e.preventDefault();const f=e.target.elements,err=$('#aerr'),btn=e.target.querySelector('.pri');
   let fl={};try{fl=JSON.parse(localStorage.getItem('myday_fail')||'{}')}catch{}const now=Date.now();
   if(fl.until>now){err.textContent=`Забагато спроб. Зачекай ${Math.ceil((fl.until-now)/1000)} с.`;return}
@@ -756,7 +944,7 @@ function showAuth(){$('#app').hidden=true;const a=$('#auth');a.hidden=false;
   const v=getVault();let key;
   try{key=await derive(f.p.value,unb64(v.salt),v.iter);await unseal(key,v.chk)}
   catch{const n=(fl.n||0)+1;localStorage.setItem('myday_fail',JSON.stringify({n,until:n>=3?now+Math.min(900,Math.pow(2,n-2)*5)*1000:0}));err.textContent='Невірний пароль';btn.disabled=false;btn.textContent='Увійти';f.p.value='';f.p.focus();return}
-  localStorage.removeItem('myday_fail');KEY=key;if(f.r.checked)await keyPut(key);
+  localStorage.removeItem('myday_fail');KEY=key;if(!localStorage.getItem('myday_vault'))localStorage.setItem('myday_vault',JSON.stringify(v));if(f.r.checked)await keyPut(key);
   try{await loadData()}catch{KEY=null;err.textContent='Не вдалося розшифрувати дані на цьому пристрої.';btn.disabled=false;btn.textContent='Увійти';return}
   start()}}
 Object.assign(A,{
